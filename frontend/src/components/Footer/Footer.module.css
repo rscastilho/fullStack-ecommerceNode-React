@@ -1,0 +1,22 @@
+.boxPrincipal{
+    min-height: 30px;
+    background-color: #bfbfbf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.developer{
+    margin-right: 5px;
+    font-size: .9em;
+    color: #734743
+}
+
+.year{
+    color: #aaa3a3;
+    font-size: .9em;
+    font-weight: 100;
+
+}

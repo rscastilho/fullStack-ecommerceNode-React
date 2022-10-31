@@ -1,0 +1,8 @@
+.inputFocus{
+    cursor: pointer;
+    margin-right: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}

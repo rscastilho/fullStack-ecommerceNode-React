@@ -1,0 +1,10 @@
+.botoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.formProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

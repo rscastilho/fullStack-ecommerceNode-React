@@ -1,0 +1,35 @@
+.erroAutorizacao {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.acao{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 10px;
+}
+
+.btnAvatar{
+    display: flex;
+    font-size: 1em;
+    font-weight: 800;
+}
+
+
+.imgAvatar{
+width: 90px;
+}
+
+.tableLine{
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+
+table{
+    width:100%;
+}
+
+}

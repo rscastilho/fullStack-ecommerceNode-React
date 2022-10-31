@@ -1,0 +1,32 @@
+.botoes{
+    display: flex;
+    justify-content: space-around;
+}
+
+.formProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.checkboxes{
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-between;
+    
+}
+.imagemBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.imagem{
+    margin-top: 5px;
+    max-width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.inputFile{
+    display: none;
+}

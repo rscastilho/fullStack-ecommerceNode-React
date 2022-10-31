@@ -1,0 +1,121 @@
+.cardPrincipal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.cards {
+    width: 50%;
+}
+
+.imgProduct {
+    min-height: 368px;
+    max-height: 368px;
+    /* object-fit: scale-down; */
+    object-fit: contain;
+    /* object-fit: cover; */
+    /* object-fit: fill; */
+    height: auto;
+    
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.quantidadeValor {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+
+}
+
+.CamposQuantidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quantidade {
+    display: flex;
+    width: 70px;
+    justify-content: center;
+}
+
+.valorTotal {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.infosEntrega {
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    font-size: .9em;
+    flex-direction: column;
+
+}
+
+@media screen and (max-width:600px) {
+    .cards {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .botoes {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .quantidadeValor {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 5px;
+
+    }
+
+    .quantidade {
+        display: flex;
+        width: 70px;
+        justify-content: center;
+    }
+
+    .valorTotal {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        font-size: 1.1em;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .infosEntrega {
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        font-size: .9em;
+        flex-direction: column;
+
+    }
+
+}

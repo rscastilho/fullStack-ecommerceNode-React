@@ -1,0 +1,22 @@
+.principal {
+    margin: 0 auto;
+    width: 50%;
+
+}
+
+.accordion {
+    margin-bottom: 5px;
+}
+
+.lista {
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 2px;
+
+}
+
+.lista:hover {
+    cursor: pointer;
+    background-color: #e3e2e27a;
+
+}

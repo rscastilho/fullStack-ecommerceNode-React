@@ -1,0 +1,167 @@
+.principal{
+
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrinhoVazio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrinhoVazioTexto{
+    font-size: 2em;
+    color: blueviolet;
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+}
+
+
+
+.infosEntrega{
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    font-size: .9em;
+    flex-direction: column;
+    
+}
+
+.valorTotal{
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+    font-size: 1.1em;
+    
+}
+.frete{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botoes{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.formaPagamento{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.itensCarrinho{
+    font-size: .9em;
+    color: #7f7d7d;
+    font-weight: 300;
+
+}
+
+@media screen and (max-width:600px) {
+
+    .principal{
+
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    table{
+        font-size: .8em;
+    }
+
+    .buttonDecrement{
+        width: 8px;
+        max-height: 25px;
+        text-align: center;
+        border: none;
+        vertical-align:bottom;
+    }
+     
+    .buttonIncrement{
+        width: 8px;
+        max-height: 25px;
+        text-align: center;
+        border: none;
+        vertical-align:bottom;
+    }
+
+    .select{
+        font-size: .8em;
+        width: 130px;
+        color: black;
+    }
+    
+   
+    .carrinhoVazio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .carrinhoVazioTexto{
+        font-size: 2em;
+        color: blueviolet;
+        margin-top: 5em;
+        margin-bottom: 5em;
+    
+    }
+    
+    .infosEntrega{
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        font-size: .9em;
+        flex-direction: column;
+        
+    }
+    
+    .valorTotal{
+        display: flex;
+        justify-content: end;
+        font-weight: 600;
+        font-size: .8em;
+        
+    }
+    .frete{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .botoes{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    .formaPagamento{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: .8em;
+    
+    }
+    
+    .itensCarrinho{
+        font-size: .7em;
+        color: #7f7d7d;
+        font-weight: 300;
+    
+    }
+
+}

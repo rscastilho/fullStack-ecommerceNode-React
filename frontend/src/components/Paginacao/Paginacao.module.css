@@ -1,0 +1,23 @@
+.paginacao{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    line-height: 18px;
+}
+
+.itensPorPagina{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.itensPorPagina span{
+    font-size: .9em;
+    color: #c3c3c3;
+}
+.qtdRegistros{
+    font-size: .9em;
+    color: #c3c3c3;
+    
+}

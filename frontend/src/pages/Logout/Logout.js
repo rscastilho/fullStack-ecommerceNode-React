@@ -1,0 +1,8 @@
+
+
+exports.limparStorage=()=>{
+
+    localStorage.clear()
+    
+    
+}

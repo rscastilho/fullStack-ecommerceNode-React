@@ -1,0 +1,33 @@
+card-footer{
+    display: flex;
+    align-items: center;
+    justify-content:space-between
+}
+
+.imgProduct{
+    width: 40%;
+    min-height: 100%;
+    border-radius: 15px;
+}
+
+td{
+    text-Align: center; 
+}
+
+.quantidadeItens{
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.buttonExport{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.buttonExport button{
+    width: 100%;
+    margin: 1px;
+}

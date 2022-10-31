@@ -1,0 +1,138 @@
+.boxPrincipal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: #ebeef2;
+    min-height: 90px;
+    min-width: 100%;
+    
+}
+
+.navEspacamento{
+    margin-bottom: 1px;
+}
+
+.navegacao{
+    min-height: 35px;
+    background-color: #bfbfbf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+        
+}
+
+.navCenter{
+    display: flex;
+    justify-content: space-between;
+    
+        
+}
+
+.navCenter, span{
+    margin: 0 10px;
+}
+
+.navCenter, span :hover{
+    color: white;
+    transition: 0.4s;
+
+}
+
+.navRight{
+    margin-right: 5px;
+    font-size: .9em;
+    font-weight: 100;
+
+}
+
+.logo{
+    margin-left: 5px;
+}
+.logoReact{
+    margin-right: 10px;
+    color: rgb(49, 10, 241);
+}
+
+.logoMySql{
+    margin-right: 10px;
+}
+
+.logoNode{
+    margin-right: 7px;
+    color: rgb(52, 167, 29);
+}
+
+.perfil{
+    color: #6c6b6b;
+    font-weight:300;
+    font-size: .9em;
+    text-align: right;
+    margin-right: 25px;
+    cursor: pointer;
+}
+.login{
+    margin-right: 15px;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.logout{
+    margin-right: 15px;
+    text-align: right;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.Link, Link, a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+@media screen and (max-width:600px) {
+    .login, .logout{
+        font-size: .8em;
+        margin-bottom: 5px;
+
+    }
+    .perfil{
+
+        font-size: .7em;
+        cursor: pointer;
+
+    }
+    .navCenter{
+        margin: 0 auto;
+        font-size: .8em;
+    }
+    .navRight{
+        display: none;
+        font-size: .7em;
+    }
+
+    .logoReact{
+        width: 25px;
+    }
+    .logoNode{
+        width: 25px;
+    }
+    .logoMySql{
+        width: 25px;
+    }
+
+    .logoJs{
+        width: 25px;
+    }
+
+    /* .central{
+        display: none;
+    } */
+}
+
+
+
+/* #d7d7d9
+#734743
+#OE3A73 */
