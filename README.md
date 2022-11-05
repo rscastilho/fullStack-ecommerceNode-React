@@ -16,7 +16,9 @@ Informacoes gerais do frontEnd:
 -Algumas bibliotecas utilizadas:
   - reactRouterDom, Axios, moment, chartJs, bootstrap, reactIcons entre outros;
 - Utilização de context API para gestão de estado da aplicação;
+- CSS modules e bootStrap;
 - 100% components funcionais, principais hooks - usestate, useref, useeffect, useCallback, useMemo, useContext, entre outros;
+
 
 Informações sobre o projeto:
 - Projeto é baseado em um sistema web e-commerce.
