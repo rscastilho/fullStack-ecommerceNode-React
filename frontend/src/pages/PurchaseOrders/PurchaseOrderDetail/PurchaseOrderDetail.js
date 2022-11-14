@@ -7,6 +7,7 @@ import { UtilService } from './../../../utils/UtilService';
 import imgError from './../../../Assets/Images/imageNotFound.png';
 import { GrDocumentPdf, GrDocumentCsv, GrDocumentExcel } from 'react-icons/gr';
 import { FaOpencart } from 'react-icons/fa';
+import PurchaseOrderPdf from '../PurchaseOrderPdf/PurchaseOrderPdf';
 
 const PurchaseOrderDetail = () => {
   const navigate = useNavigate();
@@ -15,6 +16,13 @@ const PurchaseOrderDetail = () => {
   const [pedido, setPedido] = useState([]);
   const [qtdItens, setQtdItens] = useState();
   const [itensPedido, setitensPedido] = useState([]);
+
+
+  const pedidoPdf =  {
+      pedido,
+      itensPedido
+    }
+  
 
   const carregarPedido = async () => {
     try {
@@ -108,7 +116,7 @@ const PurchaseOrderDetail = () => {
               </tbody>
             </table>
             <div className={`${styles.buttonExport}`}>
-              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() => navigate(`/purchaseorders/${userId}`)}>
+              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() =>PurchaseOrderPdf(pedidoPdf)}>
                 <GrDocumentPdf size={25} className={`m-2`} />
                 Gerar .pdf
               </button>

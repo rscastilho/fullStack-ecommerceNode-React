@@ -34,7 +34,7 @@ const ValorCompradoPorUsuario = () => {
             <tr>
               <th>Usuário</th>
               <th>Nº de pedidos</th>
-              <th>Valor total por pedido</th>
+              <th>Valor total por usuário</th>
             </tr>
           </thead>
           <tbody>
