@@ -1,5 +1,6 @@
 import pdfMake from 'pdfmake/build/pdfmake'
 import pdfFonts from 'pdfmake/build/vfs_fonts'
+import { GrPrevious } from 'react-icons/gr';
 import { UtilService } from './../../../utils/UtilService';
 
 const PurchaseOrderPdf = (pedido) => {
@@ -15,17 +16,21 @@ const PurchaseOrderPdf = (pedido) => {
     ]
 
     const dadosPedido = pedido.itensPedido.map((item) => {
-          
         return [
             { text: item.descricao, fontSize: 9, margin: [0, 2, 0, 2] },
             { text: item.quantidade, fontSize: 9, margin: [0, 2, 0, 2], alignment:'center' },
             { text: (UtilService.formatCurrency(item.valor)), fontSize: 9, margin: [0, 2, 0, 2], alignment:'right' },
             { text: (UtilService.formatCurrency(item.quantidade * item.valor)), fontSize: 9, margin: [0, 2, 0, 2], alignment:'right' },
+            // { image: (`http://localhost:5000/imagensprodutos/${item.imagemUrl}`), fit:[100,100], width: 150},
         ]
 
     })
 
     const details = [
+        [{text:`Data do processamento do pedido: ` +  UtilService.formatLongDate(pedido.pedido[0].createAt) + '\n' , fontSize: 9}],
+        [{text:`Forma de pagamento: ` +  UtilService.tipoPagamento(pedido.pedido[0].tiposPagamentos) + '\n' , fontSize: 9}],
+        [{text:`Status do pedido: ` +  UtilService.statusPedido(pedido.pedido[0].statusPedidos) + '\n' , fontSize: 9}],
+        [{text:`Nome do usuário: ` +  pedido.pedido[0].nome + '\n\n' , fontSize: 9}],
         {
             table: {
                 headerRows: 1,
@@ -35,13 +40,18 @@ const PurchaseOrderPdf = (pedido) => {
                     { text: 'Quantidade', style: 'tableHeader', fontSize: 10, bold:true, alignment:'center' },
                     { text: 'Valor', style: 'tableHeader', fontSize: 10, alignment:'right' },
                     { text: 'Total', style: 'tableHeader', fontSize: 10, alignment:'right' },
+                    // { text: 'Foto', style: 'tableHeader', fontSize: 10, alignment:'right' },
+                    
                 ], 
                 ...dadosPedido,
             ]
             },
             // layout: 'headerLineOnly'
             layout: 'lightHorizontalLines'
-        }
+        },
+        
+            [{ text:'\n Valor Total ' +  UtilService.formatCurrency(pedido.itensPedido.reduce((current, previous)=> (current + (previous.quantidade * previous.valor)),0)) , style: 'tableHeader', fontSize: 12, alignment:'right', bold: true }]
+        
     ]
 
     const rodape = (currentPage, pageCount) => {
@@ -57,7 +67,7 @@ const PurchaseOrderPdf = (pedido) => {
 
     const docDefinitions = {
         pageSize: 'A4',
-        pageMargins: [15, 50, 15, 40], //left top, right, botton
+        pageMargins: [15, 50, 15, 40,], //left top, right, botton
         header: [titulo],
         content: [details],
         footer: rodape
