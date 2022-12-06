@@ -131,7 +131,6 @@ exports.getlAllUsers = async (req, res) => {
     return error;
   }
 };
-
 exports.getUsersByNome = async (req, res) => {
   try {
     const { nome } = req.params;

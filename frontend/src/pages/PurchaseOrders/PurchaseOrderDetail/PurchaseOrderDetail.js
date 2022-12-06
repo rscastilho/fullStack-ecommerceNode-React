@@ -8,6 +8,9 @@ import imgError from './../../../Assets/Images/imageNotFound.png';
 import { GrDocumentPdf, GrDocumentCsv, GrDocumentExcel } from 'react-icons/gr';
 import { FaOpencart } from 'react-icons/fa';
 import PurchaseOrderPdf from '../PurchaseOrderPdf/PurchaseOrderPdf';
+// import PurchaseOrderCsv from '../PurchaseOrderCSV/PurchaseOrderCsv';
+import PurchaseOrderCsv from './../PurchaseOrderCSV/PurchaseOrderCsv';
+import { CSVLink, CSVDownload } from 'react-csv';
 
 const PurchaseOrderDetail = () => {
   const navigate = useNavigate();
@@ -18,11 +21,27 @@ const PurchaseOrderDetail = () => {
   const [itensPedido, setitensPedido] = useState([]);
 
 
-  const pedidoPdf =  {
-      pedido,
-      itensPedido
-    }
-  
+  const pedidoPdf = {
+    pedido,
+    itensPedido
+  }
+
+  console.log(itensPedido)
+
+  const data = [
+    itensPedido.map((item) => {
+      return(
+        [
+          item.descricao,
+          item.quantidade
+        ]
+      )
+
+
+    })
+  ]
+
+
 
   const carregarPedido = async () => {
     try {
@@ -116,7 +135,7 @@ const PurchaseOrderDetail = () => {
               </tbody>
             </table>
             <div className={`${styles.buttonExport}`}>
-              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() =>PurchaseOrderPdf(pedidoPdf)}>
+              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() => PurchaseOrderPdf(pedidoPdf)}>
                 <GrDocumentPdf size={25} className={`m-2`} />
                 Gerar .pdf
               </button>
@@ -124,9 +143,12 @@ const PurchaseOrderDetail = () => {
                 <GrDocumentExcel size={25} className={`m-2`} />
                 Gerar .xls
               </button>
-              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() => navigate(`/purchaseorders/${userId}`)}>
-                <GrDocumentCsv size={25} className={`m-2`} />
-                Gerar .CSV
+              <button className="btn btn-sm btn-outline-primary mb-1" onClick={() => (pedidoPdf)}>
+                <CSVLink data={data} filename={`PedidoNumero${pedido && pedido.map((x) => x.id)}`} separator={';'} target='_blank'>
+                  <GrDocumentCsv size={25} className={`m-2`} />
+                  Gerar .csv
+                </CSVLink>
+
               </button>
             </div>
             <button className="btn btn btn-secondary m-1" onClick={() => navigate(`/purchaseorders/${userId}`)}>

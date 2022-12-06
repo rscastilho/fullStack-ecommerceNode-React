@@ -21,6 +21,7 @@ import ProdutosPorCategoria from './../pages/Dashboard/ProdutosPorCategoria/Prod
 import ContarUsuarios from '../pages/Dashboard/ContarUsuarios/ContarUsuarios';
 import PedidosPorUsuario from './../pages/Dashboard/PedidosPorUsuario/PedidosPorUsuario';
 import ValorPedidosPorUsuario from '../pages/Dashboard/ValorPedidosPorUsuario/ValorCompradoPorUsuario';
+import PurchaseOrderCsv from './../pages/PurchaseOrders/PurchaseOrderCSV/PurchaseOrderCsv';
 
 const AppRouts = () => {
   const { authenticated } = useContext(AuthContext);
@@ -43,6 +44,7 @@ const AppRouts = () => {
 
         <Route path="/purchaseorders/:userId" element={<PurchaseOrderByUserId />} />
         <Route path="/purchaseorders/detail/:id" element={<PurchaseOrderDetail />} />
+        <Route path="/purchaseorders/csv" element={<PurchaseOrderCsv/>} />
 
         <Route path="/cart" element={<Cart />} />
 
