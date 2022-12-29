@@ -6,3 +6,4 @@ exports.getAllCategories = () => {
     ORDER BY Descricao ASC`;
   return { query };
 };
+

@@ -9,8 +9,7 @@ import { GrDocumentPdf, GrDocumentCsv, GrDocumentExcel } from 'react-icons/gr';
 import { FaOpencart } from 'react-icons/fa';
 import PurchaseOrderPdf from '../PurchaseOrderPdf/PurchaseOrderPdf';
 // import PurchaseOrderCsv from '../PurchaseOrderCSV/PurchaseOrderCsv';
-import PurchaseOrderCsv from './../PurchaseOrderCSV/PurchaseOrderCsv';
-import { CSVLink, CSVDownload } from 'react-csv';
+import { CSVLink } from 'react-csv';
 
 const PurchaseOrderDetail = () => {
   const navigate = useNavigate();

@@ -12,11 +12,12 @@ exports.login = async (req, res) => {
       res.status(404).json({ message: 'Insira uma senha válida' });
       return;
     }
+
     //valida usuario antes de logar
     sql.query(userByEmail.query, userByEmail.fields, (err, data) => {
       err && res.status(404).json({ erro: err });
       if (data.length === 0) {
-        res.status(404).json({ message: 'Email não cadatrado no sistema' });
+        res.status(404).json({ message: 'Email não cadastrado no sistema' });
         return;
       } else if (data[0].Blocked > 0) {
         res.status(404).json({ message: 'Usuario bloqueado! Contate o administrador do sistema' });
@@ -64,5 +65,6 @@ exports.login = async (req, res) => {
   } catch (error) {
     console.log('Erro ao registrar', error);
     res.status(422).json({ message: 'Erro encontrado', error });
+    
   }
 };

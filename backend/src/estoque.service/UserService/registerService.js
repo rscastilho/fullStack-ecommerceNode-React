@@ -53,5 +53,6 @@ exports.register = async (req, res) => {
   } catch (error) {
     console.log('Erro ao registrar', error);
     res.status(404).json({ message: 'Erro encontrado', error });
-  }
+     }
 };
+

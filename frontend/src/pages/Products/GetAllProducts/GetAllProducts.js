@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { GetAll, getProductsByCategoriyId } from '../../../api//ProductsApi';
 import { getAllCategories } from '../../../api/CategoryApi';
 import styles from './GetAllProducts.module.css';
