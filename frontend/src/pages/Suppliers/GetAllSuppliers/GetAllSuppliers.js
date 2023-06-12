@@ -28,7 +28,7 @@ const GetAllSuppliers = () => {
     <div>
       {isLoading ? (
         <>
-          <PageTitle title={'Fornecedores'} subtitle={'Fornecedores relacionados aos produtos'} />
+          <PageTitle title={'Fornecedores'} subtitle={`${registros} fornecedores cadastrados`} />
           <table className="table table-hover table-sm">
             <thead>
               <tr>

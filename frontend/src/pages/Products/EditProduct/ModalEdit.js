@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styles from './ModalEdit.module.css';
 import Input from './../../../components/Form/Input';
 import { UtilService } from './../../../utils/UtilService';
@@ -92,17 +86,13 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
     inputRefFile.current.click();
   };
 
-  const carregarImagem = (e) => {
+  const carregarImagem = e => {
     try {
       e.preventDefault();
       const formData = new FormData();
       if (e.target.files[0]) {
         const image = e.target.files[0];
-        if (
-          image.type === 'image/jpeg' ||
-          image.type === 'image/png' ||
-          image.type === 'image/jpg'
-        ) {
+        if (image.type === 'image/jpeg' || image.type === 'image/png' || image.type === 'image/jpg') {
           setImagemCarregada(URL.createObjectURL(e.target.files[0]));
           formData.append('imageFile', e.target.files[0]);
           setImageFile(formData);
@@ -120,7 +110,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
 
   const mandaImagem = async (id, imageFile, imagemUrl) => {
     try {
-      AddProductImage(id, imageFile).then((result) => {
+      AddProductImage(id, imageFile).then(result => {
         toast.success(result.message, {
           autoClose: 1500,
           position: 'bottom-center',
@@ -137,7 +127,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
 
   useEffect(() => {
     if (imageFile) {
-      mandaImagem(id, productImagem, imagemUrl).then((x) => {});
+      mandaImagem(id, productImagem, imagemUrl).then(x => {});
     }
   }, [imageFile]);
 
@@ -173,27 +163,16 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
   }, [productById]);
 
   return (
-    <div
-      className='modal fade'
-      id='modalEdit'
-      tabIndex='-1'
-      aria-labelledby='ModalLabel'
-      aria-hidden='true'
-    >
-      <div className='modal-dialog'>
-        <div className='modal-content'>
-          <div className='modal-header'>
-            <h5 className='modal-title' id='ModalLabel'>
+    <div className="modal fade" id="modalEdit" tabIndex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="ModalLabel">
               Atualizar {descricao}
             </h5>
-            <button
-              type='button'
-              className='btn-close'
-              data-bs-dismiss='modal'
-              aria-label='Close'
-            ></button>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div className='modal-body'>
+          <div className="modal-body">
             <div>
               {product && (
                 <>
@@ -204,7 +183,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                         labelValue={'Produto'}
                         value={productSave.descricao}
                         inputPlaceHolder={'Digite a descrição do produto'}
-                        handleFunction={(e) => {
+                        handleFunction={e => {
                           setDescricao(e.target.value);
                         }}
                       />
@@ -217,13 +196,12 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                               inputType={'number'}
                               labelValue={'Quantidade estoque'}
                               value={quantidadeEstoque}
-                              inputPlaceHolder={
-                                'Digite a quantidade de estoque'
-                              }
-                              handleFunction={(e) => {
+                              inputPlaceHolder={'Digite a quantidade de estoque'}
+                              handleFunction={e => {
                                 setQuantidadeEstoque(e.target.value);
                                 setValorTotal(quantidadeEstoque * valor);
                               }}
+                              min="0"
                             />
                           </div>
                           <div>
@@ -232,7 +210,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                               labelValue={'Quantidade Minima'}
                               value={quantidadeMinima}
                               inputPlaceHolder={'Digite a quantidade minima'}
-                              handleFunction={(e) => {
+                              handleFunction={e => {
                                 setQuantidadeMinima(e.target.value);
                               }}
                             />
@@ -245,7 +223,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                               labelValue={'Valor'}
                               value={UtilService.formatCurrency(valor)}
                               inputPlaceHolder={'Digite o valor'}
-                              handleFunction={(e) => {
+                              handleFunction={e => {
                                 setValor(e.target.value);
                                 setValorTotal(quantidadeEstoque * valor);
                               }}
@@ -255,9 +233,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                             <Input
                               inputType={'text'}
                               labelValue={'Valor Total'}
-                              value={UtilService.formatCurrency(
-                                quantidadeEstoque * valor
-                              )}
+                              value={UtilService.formatCurrency(quantidadeEstoque * valor)}
                               inputPlaceHolder={'Digite 0 valor total'}
                             />
                           </div>
@@ -265,33 +241,24 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                         <div className={`${styles.imagemBox}`}>
                           <img
                             className={`${styles.imagem}`}
-                            src={
-                              !imagemCarregada
-                                ? `http://localhost:5000/imagensprodutos/${imagemUrl}`
-                                : imagemCarregada
-                            }
+                            src={!imagemCarregada ? `http://localhost:5000/imagensprodutos/${imagemUrl}` : imagemCarregada}
                             onClick={file}
                             alt={imagemUrl}
                           />
-                          <input
-                            type='file'
-                            className={`${styles.inputFile}`}
-                            ref={inputRefFile}
-                            onChange={carregarImagem}
-                          />
+                          <input type="file" className={`${styles.inputFile}`} ref={inputRefFile} onChange={carregarImagem} />
                         </div>
                       </div>
                       <div>
                         <div>
                           Categorias:
                           <select
-                            className='form-select form-select-sm'
-                            aria-label='.form-select-sm example'
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
                             value={categoriaId}
-                            onChange={(e) => setCategoriaId(e.target.value)}
+                            onChange={e => setCategoriaId(e.target.value)}
                           >
                             {categories &&
-                              categories.map((item) => (
+                              categories.map(item => (
                                 <option key={item.Id} value={item.Id}>
                                   {item.Descricao}
                                 </option>
@@ -301,13 +268,13 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                         <div>
                           Fornecedores:
                           <select
-                            className='form-select form-select-sm'
-                            aria-label='.form-select-sm example'
+                            className="form-select form-select-sm"
+                            aria-label=".form-select-sm example"
                             value={fornecedorId}
-                            onChange={(e) => setFornecedorId(e.target.value)}
+                            onChange={e => setFornecedorId(e.target.value)}
                           >
                             {suppliers &&
-                              suppliers.map((item) => (
+                              suppliers.map(item => (
                                 <option key={item.Id} value={item.Id}>
                                   {item.RazaoSocial}
                                 </option>
@@ -316,30 +283,21 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
                         </div>
                         <div>
                           <div>
-                            <label className='form-check-label'>Deletado</label>
+                            <label className="form-check-label">Deletado</label>
                             <br />
                             <input
-                              className='form-check-input'
-                              type='checkbox'
+                              className="form-check-input"
+                              type="checkbox"
                               checked={deleted}
-                              onChange={(e) => {
+                              onChange={e => {
                                 setDeleted(deleted ? 0 : 1);
                               }}
                             />
                           </div>
                           <div>
-                            <label className='form-check-label'>
-                              Destacar Imagem
-                            </label>
+                            <label className="form-check-label">Destacar Imagem</label>
                             <br />
-                            <input
-                              className='form-check-input'
-                              type='checkbox'
-                              checked={destacarImagem}
-                              onChange={() =>
-                                setDestacarImagem(!destacarImagem)
-                              }
-                            />
+                            <input className="form-check-input" type="checkbox" checked={destacarImagem} onChange={() => setDestacarImagem(!destacarImagem)} />
                           </div>
                         </div>
                       </div>
@@ -351,9 +309,9 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
           </div>
           <div className={`modal-footer ${styles.botoes}`}>
             <button
-              type='button'
-              className='btn btn-secondary'
-              data-bs-dismiss='modal'
+              type="button"
+              className="btn btn-secondary"
+              data-bs-dismiss="modal"
               onClick={() => {
                 setImagemCarregada('');
                 setId('');
@@ -361,12 +319,7 @@ const ModalEdit = ({ id, setLoop, loop, setId }) => {
             >
               Fechar
             </button>
-            <button
-              type='submit'
-              className='btn btn-primary'
-              data-bs-dismiss='modal'
-              onClick={handleUpdate}
-            >
+            <button type="submit" className="btn btn-primary" data-bs-dismiss="modal" onClick={handleUpdate}>
               Salvar
             </button>
           </div>

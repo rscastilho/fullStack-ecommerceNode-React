@@ -1,35 +1,35 @@
-.acoes{
-    display: flex;
-    justify-content: space-around;
+.acoes {
+  display: flex;
+  justify-content: space-around;
 }
 
-.search{
-    display: flex;
+.search {
+  display: flex;
 }
 
-th{
-    text-align: center;
-    vertical-align: center;
+th {
+  text-align: center;
+  vertical-align: center;
 }
 
-td{
-    vertical-align: center;
+td {
+  vertical-align: center;
 }
 
-.estoqueZero{
-    background-color: #d33c3cde;
-    color: white;
+.estoqueZero {
+  color: red;
+  font-weight: 500;
+  border: 1.2px solid red;
 }
 
-.inputFocus{
-    cursor: pointer;
+.inputFocus {
+  cursor: pointer;
 }
 
-td{
-    cursor: pointer;
+td {
+  cursor: pointer;
 }
 
-.itensPorPagina{
-    
-    font-size: .8em;
+.itensPorPagina {
+  font-size: 0.8em;
 }
